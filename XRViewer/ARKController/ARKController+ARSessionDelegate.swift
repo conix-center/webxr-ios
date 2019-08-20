@@ -1,3 +1,6 @@
+import LightAnchorFramework
+
+
 extension ARKController: ARSessionDelegate {
     
     // Tony: Per SO, a bug that's been around for 3+ years necessitates these @objc calls
@@ -6,6 +9,9 @@ extension ARKController: ARSessionDelegate {
     @objc(session:didUpdateFrame:)
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         updateARKData(with: frame)
+        
+        //LightAnchors
+        poseManager.process(frame: frame)
         
         didUpdate(self)
         

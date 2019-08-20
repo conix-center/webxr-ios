@@ -3,6 +3,8 @@ import SceneKit
 import CocoaLumberjack
 
 class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate {
+
+    
     
     private var session: ARSession?
     private var renderView: ARSCNView?
@@ -299,6 +301,18 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
     
     func setShowOptions(_ options: ShowOptions) {
         showOptions = options
+    }
+    
+    func correctWorldCoordinates(with transform: SCNMatrix4) {
+        NSLog("correctWorldCoordinates")
+      //  renderView?.scene.rootNode.transform = transform
+        let trans = simd_float4x4(transform)
+        if let sceneView = renderView {
+            sceneView.session.setWorldOrigin(relativeTransform: trans)
+        } else {
+            NSLog("no sceneView")
+            assert(false)
+        }
     }
     
     // Stub commented out from ARKControllerProtocol in conversion to Swift

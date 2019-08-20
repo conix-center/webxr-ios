@@ -12,6 +12,7 @@ target 'XRViewer' do
     # Point to fork of https://github.com/Orderella/PopupDialog that allows for wide alerts
     pod 'PopupDialog', :git => 'https://github.com/robomex/PopupDialog.git', :branch => 'wide-alerts'
     pod 'pop'
+    pod 'LASwift'
     # Temporarily pointing to Swift 4 & Xcode 10.2 compatible fork of https://github.com/mozilla-mobile/telemetry-ios
     pod 'MozillaTelemetry', :git => 'https://github.com/robomex/telemetry-ios.git', :branch => 'swift4'
     pod 'FontAwesomeKit'

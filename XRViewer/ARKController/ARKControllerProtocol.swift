@@ -13,4 +13,7 @@
     var previewingSinglePlane: Bool { get set }
     var focusedPlane: PlaneNode? { get set }
     var planes: [UUID : PlaneNode] { get set }
+    
+    //LightAnchors
+    func correctWorldCoordinates(with transform: SCNMatrix4)
 }

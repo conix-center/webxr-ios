@@ -3,6 +3,10 @@ import Metal
 import MetalKit
 
 class ARKMetalController: NSObject, ARKControllerProtocol, MTKViewDelegate {
+    func correctWorldCoordinates(with: SCNMatrix4) {
+        
+    }
+    
     
     var previewingSinglePlane: Bool = false
     var focusedPlane: PlaneNode?

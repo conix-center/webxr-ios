@@ -4,6 +4,9 @@
 #import "Compression.h"
 #import "XRViewer-Swift.h"
 
+//LightAnchors
+#import <ARKit/ARKit.h>
+
 @interface ARKController () {
 }
 
@@ -106,6 +109,20 @@
         }
  
         self.numberOfFramesWithoutSendingFaceGeometry = 0;
+        
+        //LightAnchors
+        SCNVector3 point1 = SCNVector3Make(0, 1, 0);
+        SCNVector3 point2 = SCNVector3Make(1, 1, 0);
+        SCNVector3 point3 = SCNVector3Make(1, 0, 0);
+        SCNVector3 point4 = SCNVector3Make(0, 0, 0);
+        NSArray *anchorLocations = @[[NSValue valueWithSCNVector3:point1], [NSValue valueWithSCNVector3:point2], [NSValue valueWithSCNVector3:point3], [NSValue valueWithSCNVector3:point4]];
+        
+        float imageWidth = 1280;//worldTrackingConfiguration.videoFormat.imageResolution.width;
+        float imageHeight = 720;//worldTrackingConfiguration.videoFormat.imageResolution.height;
+        NSLog(@"worldTrackingConfiguration imageWidth:%f imageHeight: %f", imageWidth, imageHeight);
+        self.poseManager = [[LightAnchorPoseManager alloc] initWithImageWidth:imageWidth imageHeight:imageHeight anchorLocations:anchorLocations];
+        self.poseManager.delegate = self;
+        [self.poseManager toggleCapture];
     }
     
     return self;

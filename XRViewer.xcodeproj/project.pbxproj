@@ -14,7 +14,11 @@
 		04A8156A1F419F840082D31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041503D31F28944F00887400 /* Assets.xcassets */; };
 		04A9837A1F32291D00120CF8 /* ARKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A983651F32268900120CF8 /* ARKController.m */; };
 		04A9837C1F32292900120CF8 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 04A9836A1F3226A500120CF8 /* Shaders.metal */; };
-		591A8C502FA83D70E8F5B5B4 /* Pods_XRViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CB6E6E1AD338266A9AB3DC /* Pods_XRViewer.framework */; };
+		5B7A6DB12305B74400EFA8C9 /* ARKController+LightAnchorPoseManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A6DB02305B74400EFA8C9 /* ARKController+LightAnchorPoseManagerDelegate.swift */; };
+		5B7A6DD4230B517800EFA8C9 /* Pods_XRViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CB6E6E1AD338266A9AB3DC /* Pods_XRViewer.framework */; };
+		5B7A6E12230C4B0500EFA8C9 /* lightanchorkernels.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7A6E11230C4B0500EFA8C9 /* lightanchorkernels.metallib */; };
+		5B7A6E1D230C607700EFA8C9 /* LightAnchorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7A6E1B230C607000EFA8C9 /* LightAnchorFramework.framework */; };
+		5B7A6E1E230C607700EFA8C9 /* LightAnchorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7A6E1B230C607000EFA8C9 /* LightAnchorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6207254E206A90BF00887B1F /* RequestPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6207254C206A90BF00887B1F /* RequestPermissionsViewController.swift */; };
 		6207254F206A90BF00887B1F /* RequestPermissionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6207254D206A90BF00887B1F /* RequestPermissionsViewController.xib */; };
 		620D24A11FC48994002127FD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 620D24A01FC48994002127FD /* Settings.bundle */; };
@@ -76,6 +80,20 @@
 		B6FEAC0F224AD4D500EE0343 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEAC0E224AD4D500EE0343 /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5B7A6DD9230B519000EFA8C9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B7A6E1E230C607700EFA8C9 /* LightAnchorFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0401E04A1F612C240075D823 /* BarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarView.xib; sourceTree = "<group>"; };
 		041503C11F28944F00887400 /* XRViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XRViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +107,10 @@
 		04A9836A1F3226A500120CF8 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		04BB9D641F39BE40004328A2 /* ARKHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARKHelper.h; sourceTree = "<group>"; };
 		23C446431F25D48210AB29A1 /* Pods-XRViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XRViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-XRViewer/Pods-XRViewer.release.xcconfig"; sourceTree = "<group>"; };
+		5B7A6DB02305B74400EFA8C9 /* ARKController+LightAnchorPoseManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARKController+LightAnchorPoseManagerDelegate.swift"; sourceTree = "<group>"; };
+		5B7A6DEE230C38CE00EFA8C9 /* LightAnchorFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LightAnchorFramework.framework; sourceTree = "<group>"; };
+		5B7A6E11230C4B0500EFA8C9 /* lightanchorkernels.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = lightanchorkernels.metallib; sourceTree = "<group>"; };
+		5B7A6E1B230C607000EFA8C9 /* LightAnchorFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LightAnchorFramework.framework; sourceTree = "<group>"; };
 		6207254C206A90BF00887B1F /* RequestPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPermissionsViewController.swift; sourceTree = "<group>"; };
 		6207254D206A90BF00887B1F /* RequestPermissionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestPermissionsViewController.xib; sourceTree = "<group>"; };
 		620D24A01FC48994002127FD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -158,7 +180,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				591A8C502FA83D70E8F5B5B4 /* Pods_XRViewer.framework in Frameworks */,
+				5B7A6DD4230B517800EFA8C9 /* Pods_XRViewer.framework in Frameworks */,
+				5B7A6E1D230C607700EFA8C9 /* LightAnchorFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +258,7 @@
 				B654FED121EF99150004F001 /* ARKController+AppState.swift */,
 				B620ED0F21FB90A50066B4A8 /* ARKController+ARSessionDelegate.swift */,
 				B6468D8D228CC20C002F22A3 /* ARKController+ARSessionObserver.swift */,
+				5B7A6DB02305B74400EFA8C9 /* ARKController+LightAnchorPoseManagerDelegate.swift */,
 				B620ED132204B5480066B4A8 /* ARKController+Camera.swift */,
 				B6F4C0BC221B5AEC009ECC06 /* ARKController+Frame.swift */,
 				B620ED0D21F7B2E90066B4A8 /* ARKController+Images.swift */,
@@ -270,6 +294,7 @@
 		04A983761F32279900120CF8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5B7A6DEE230C38CE00EFA8C9 /* LightAnchorFramework.framework */,
 				6241012B1FEABABF006FDBE3 /* XRViewer-Bridging-Header.h */,
 				041503D81F28944F00887400 /* Info.plist */,
 				625051081FCDBDBE00EEAC0A /* GoogleService-Info.plist */,
@@ -287,6 +312,7 @@
 		04B1E1221F3C648200F96C5A /* Metal */ = {
 			isa = PBXGroup;
 			children = (
+				5B7A6E11230C4B0500EFA8C9 /* lightanchorkernels.metallib */,
 				B6FAD7BF221F2F9100310114 /* ARKMetalController.swift */,
 				04A983641F32262200120CF8 /* Render */,
 			);
@@ -357,6 +383,7 @@
 		8C9E99F056CB67F28E2A9647 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B7A6E1B230C607000EFA8C9 /* LightAnchorFramework.framework */,
 				62CB6E6E1AD338266A9AB3DC /* Pods_XRViewer.framework */,
 			);
 			name = Frameworks;
@@ -385,6 +412,7 @@
 				041503BE1F28944F00887400 /* Frameworks */,
 				041503BF1F28944F00887400 /* Resources */,
 				221606BE81C9D422A4D5F9C6 /* [CP] Embed Pods Frameworks */,
+				5B7A6DD9230B519000EFA8C9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,6 +472,7 @@
 				62242AC4201F2A0700506412 /* TextInputTableViewCell.xib in Resources */,
 				04A8156A1F419F840082D31D /* Assets.xcassets in Resources */,
 				620D24A11FC48994002127FD /* Settings.bundle in Resources */,
+				5B7A6E12230C4B0500EFA8C9 /* lightanchorkernels.metallib in Resources */,
 				B632850B21C330A500FD5510 /* MyriadPro-Regular.OTF in Resources */,
 				62242ACC201F2D3600506412 /* TextTableViewCell.xib in Resources */,
 				04A815681F419EB60082D31D /* Models.scnassets in Resources */,
@@ -485,6 +514,7 @@
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
+				"${BUILT_PRODUCTS_DIR}/LASwift/LASwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MozillaTelemetry/MozillaTelemetry.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
@@ -495,6 +525,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LASwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MozillaTelemetry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
@@ -517,6 +548,7 @@
 				B6FEAC0F224AD4D500EE0343 /* Renderer.swift in Sources */,
 				625FA2E6202046BF00F62698 /* TermsAndConditionsTableViewCell.swift in Sources */,
 				B68A7C4F21BB2FAB0033170C /* HitTestResult.swift in Sources */,
+				5B7A6DB12305B74400EFA8C9 /* ARKController+LightAnchorPoseManagerDelegate.swift in Sources */,
 				B68A7C5121BB34C40033170C /* ARKControllerProtocol.swift in Sources */,
 				04A9837C1F32292900120CF8 /* Shaders.metal in Sources */,
 				B620ED1021FB90A50066B4A8 /* ARKController+ARSessionDelegate.swift in Sources */,
@@ -702,7 +734,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6JYYU24LA8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -727,7 +763,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6JYYU24LA8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
