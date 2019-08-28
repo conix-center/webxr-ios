@@ -110,6 +110,14 @@
  
         self.numberOfFramesWithoutSendingFaceGeometry = 0;
         
+        //Yellow Sphere
+        SCNView *renderView = [controller getRenderView];
+        if (renderView.class != [SCNView class]) {
+            NSLog(@"renderView is not an SCNView");
+        }
+        self.sphereNode = [self createSphereAt:SCNVector3Make(0, 0, 0) radius:0.1 color:UIColor.yellowColor];
+        [renderView.scene.rootNode addChildNode:self.sphereNode];
+        
         //LightAnchors
         SCNVector3 point1 = SCNVector3Make(0, 1, 0);
         SCNVector3 point2 = SCNVector3Make(1, 1, 0);
@@ -127,6 +135,30 @@
     
     return self;
 }
+    
+    -(SCNNode *)createSphereAt:(SCNVector3)location radius:(float)radius color:(UIColor*)color {
+        SCNSphere *sphere = [[SCNSphere alloc] init];
+        sphere.radius = radius;
+        SCNMaterial *material = [[SCNMaterial alloc] init];
+        material.diffuse.contents = color;
+        material.locksAmbientWithDiffuse = TRUE;
+        sphere.materials = @[material];
+        SCNNode *sphereNode = [[SCNNode alloc] init];
+        sphereNode.geometry = sphere;
+        sphereNode.position = location;
+        return sphereNode;
+    }
+    
+//    func createSphere(at location: SCNVector3, radius: Float, color: UIColor) -> SCNNode{
+//        let sphereGeometry = SCNSphere(radius: CGFloat(radius))
+//        let sphereMaterial = SCNMaterial()
+//        sphereMaterial.diffuse.contents = color.cgColor
+//        sphereMaterial.locksAmbientWithDiffuse = true
+//        sphereGeometry.materials = [sphereMaterial]
+//        let sphereNode = SCNNode(geometry: sphereGeometry)
+//        sphereNode.position = location
+//        return sphereNode
+//    }
 
 - (void)viewWillTransitionToSize:(CGSize)size
 {

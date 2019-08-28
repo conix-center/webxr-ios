@@ -716,6 +716,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         }
 
         webController?.onInitAR = { uiOptionsDict in
+            NSLog("web function initAR")
             blockSelf?.stateController.setShowOptions(self.showOptionsFormDict(dict: uiOptionsDict))
             blockSelf?.stateController.applyOnEnterForegroundAction()
             blockSelf?.stateController.applyOnDidReceiveMemoryAction()
@@ -730,6 +731,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         }
 
         webController?.onWatchAR = { request in
+            NSLog("web function watchAR")
             blockSelf?.handleOnWatchAR(withRequest: request, initialLoad: true, grantedPermissionsBlock: nil)
         }
         
@@ -738,6 +740,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         }
 
         webController?.onStopAR = {
+            NSLog("web function stopAR")
             blockSelf?.stateController.setWebXR(false)
             blockSelf?.stateController.setShowMode(.nothing)
         }
@@ -749,14 +752,17 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         }
 
         webController?.onJSUpdateData = {
+            NSLog("web function jsUpdateData")
             return blockSelf?.commonData() ?? [:]
         }
 
         webController?.loadURL = { url in
+            NSLog("web function loadURL")
             blockSelf?.webController?.loadURL(url)
         }
 
         webController?.onSetUI = { uiOptionsDict in
+            NSLog("web function setUI")
             blockSelf?.stateController.setShowOptions(self.showOptionsFormDict(dict: uiOptionsDict))
         }
 
@@ -780,6 +786,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         }
 
         webController?.onAddAnchor = { name, transformArray, result in
+            NSLog("web function addAnchor: \(name)")
             if blockSelf?.arkController?.addAnchor(name, transformHash: transformArray) ?? false {
                 if let anArray = transformArray {
                     result([WEB_AR_UUID_OPTION: name ?? 0, WEB_AR_TRANSFORM_OPTION: anArray])
@@ -790,20 +797,24 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         }
 
         webController?.onRemoveObjects = { objects in
+            NSLog("web function removeObjects")
             blockSelf?.arkController?.removeAnchors(objects)
         }
 
         webController?.onDebugButtonToggled = { selected in
+            NSLog("web function debugButtonToggled")
             blockSelf?.stateController.setShowMode(selected ? ShowMode.urlDebug : ShowMode.url)
         }
         
         webController?.onGeometryArraysSet = { geometryArrays in
+            NSLog("web function geometryArraySet")
             blockSelf?.stateController.state.geometryArrays = geometryArrays
         }
         
         webController?.onSettingsButtonTapped = {
             // Before showing the settings popup, we hide the bar and the debug buttons so they are not in the way
             // After dismissing the popup, we show them again.
+            NSLog("web function settingsButtonTapped")
             let settingsViewController = SettingsViewController()
             let navigationController = UINavigationController(rootViewController: settingsViewController)
             weak var weakSettingsViewController = settingsViewController
@@ -820,12 +831,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         }
 
         webController?.onComputerVisionDataRequested = {
+            NSLog("web function computerVisionDataRequested")
             blockSelf?.stateController.state.computerVisionFrameRequested = true
             blockSelf?.arkController?.computerVisionFrameRequested = true
         }
 
         webController?.onResetTrackingButtonTapped = {
-
+            NSLog("web function resetTrackingButtonTapped")
             blockSelf?.messageController?.showMessageAboutResetTracking({ option in
                 guard let state = blockSelf?.stateController.state else { return }
                 switch option {
@@ -842,44 +854,54 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         }
 
         webController?.onStartSendingComputerVisionData = {
+            NSLog("web function startSendingComputerVisionData")
             blockSelf?.stateController.state.sendComputerVisionData = true
         }
 
         webController?.onStopSendingComputerVisionData = {
+            NSLog("web function stopSendingComputerVisionData")
             blockSelf?.stateController.state.sendComputerVisionData = false
         }
         
         webController?.onSetNumberOfTrackedImages = { number in
+            NSLog("web function setNumberOfTrackedImages")
             blockSelf?.stateController.state.numberOfTrackedImages = number
             blockSelf?.arkController?.setNumberOfTrackedImages(number)
         }
 
         webController?.onActivateDetectionImage = { imageName, completion in
+            NSLog("web function activateDetectionImage")
             blockSelf?.arkController?.activateDetectionImage(imageName, completion: completion)
         }
 
         webController?.onGetWorldMap = { completion in
 //            let completion = completion as? GetWorldMapCompletionBlock
+            NSLog("web function getWorldMap")
             blockSelf?.arkController?.getWorldMap(completion)
         }
 
         webController?.onSetWorldMap = { dictionary, completion in
+            NSLog("web function setWorldMap")
             blockSelf?.arkController?.setWorldMap(dictionary, completion: completion)
         }
 
         webController?.onDeactivateDetectionImage = { imageName, completion in
+            NSLog("web function deactivateDetectionImage")
             blockSelf?.arkController?.deactivateDetectionImage(imageName, completion: completion)
         }
 
         webController?.onDestroyDetectionImage = { imageName, completion in
+            NSLog("web function destroyDetectionImage")
             blockSelf?.arkController?.destroyDetectionImage(imageName, completion: completion)
         }
 
         webController?.onCreateDetectionImage = { dictionary, completion in
+            NSLog("web function createDetectionImage")
             blockSelf?.arkController?.createDetectionImage(dictionary, completion: completion)
         }
 
         webController?.onSwitchCameraButtonTapped = {
+            NSLog("web function switchCameraButtonTapped")
 //            let numberOfImages = blockSelf?.stateController.state.numberOfTrackedImages ?? 0
 //            blockSelf?.arkController?.switchCameraButtonTapped(numberOfImages)
             guard let state = blockSelf?.stateController.state else { return }

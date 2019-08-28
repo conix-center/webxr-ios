@@ -305,7 +305,8 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
     
     func correctWorldCoordinates(with transform: SCNMatrix4) {
         NSLog("correctWorldCoordinates")
-      //  renderView?.scene.rootNode.transform = transform
+        NSLog("transform: \(transform)")
+     //   renderView?.scene.rootNode.transform = transform
         let trans = simd_float4x4(transform)
         if let sceneView = renderView {
             sceneView.session.setWorldOrigin(relativeTransform: trans)
@@ -313,6 +314,7 @@ class ARKSceneKitController: NSObject, ARKControllerProtocol, ARSCNViewDelegate 
             NSLog("no sceneView")
             assert(false)
         }
+        
     }
     
     // Stub commented out from ARKControllerProtocol in conversion to Swift

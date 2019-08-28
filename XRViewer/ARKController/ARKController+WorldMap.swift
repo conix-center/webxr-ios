@@ -218,6 +218,7 @@ import Compression
      @param completion The completion block that will be called with the outcome of the loading of the world map
      */
     func setWorldMap(_ worldMapDictionary: [AnyHashable : Any], completion: @escaping SetWorldMapCompletionBlock) {
+        NSLog("setWorldMap")
         if setWorldMapPromise != nil {
             setWorldMapPromise(false, "World Map set request cancelled by subsequent call to set World Map.")
         }

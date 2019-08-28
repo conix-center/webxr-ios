@@ -95,6 +95,8 @@ typedef void (^ResultArrayBlock)(NSArray *);
  Request a CV frame
  */
 @property(nonatomic) BOOL computerVisionFrameRequested;
+    
+    @property (nonatomic) SCNNode *sphereNode;
 
 
 /**
