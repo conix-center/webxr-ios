@@ -115,8 +115,17 @@
         if (renderView.class != [SCNView class]) {
             NSLog(@"renderView is not an SCNView");
         }
-        self.sphereNode = [self createSphereAt:SCNVector3Make(0, 0, 0) radius:0.1 color:UIColor.yellowColor];
-        [renderView.scene.rootNode addChildNode:self.sphereNode];
+        self.sphereNode1 = [self createSphereAt:SCNVector3Make(0, 1, 0) radius:0.1 color:UIColor.redColor];
+        [renderView.scene.rootNode addChildNode:self.sphereNode1];
+        self.sphereNode2 = [self createSphereAt:SCNVector3Make(0, 0, 0) radius:0.1 color:UIColor.blueColor];
+        [renderView.scene.rootNode addChildNode:self.sphereNode2];
+        self.sphereNode3 = [self createSphereAt:SCNVector3Make(1, 0, 0) radius:0.1 color:UIColor.greenColor];
+        [renderView.scene.rootNode addChildNode:self.sphereNode3];
+        self.sphereNode4 = [self createSphereAt:SCNVector3Make(1, 1, 0) radius:0.1 color:UIColor.yellowColor];
+        [renderView.scene.rootNode addChildNode:self.sphereNode4];
+
+
+
         
         //LightAnchors
         SCNVector3 point1 = SCNVector3Make(0, 1, 0);

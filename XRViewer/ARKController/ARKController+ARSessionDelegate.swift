@@ -11,7 +11,9 @@ extension ARKController: ARSessionDelegate {
         updateARKData(with: frame)
         
         //LightAnchors
-        poseManager.process(frame: frame)
+        if UserDefaults.standard.bool(forKey: Constant.useLightAnchorsKey()) {
+            poseManager.process(frame: frame)
+        }
         
         didUpdate(self)
         

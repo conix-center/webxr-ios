@@ -96,7 +96,10 @@ typedef void (^ResultArrayBlock)(NSArray *);
  */
 @property(nonatomic) BOOL computerVisionFrameRequested;
     
-    @property (nonatomic) SCNNode *sphereNode;
+    @property (nonatomic) SCNNode *sphereNode1;
+    @property (nonatomic) SCNNode *sphereNode2;
+    @property (nonatomic) SCNNode *sphereNode3;
+    @property (nonatomic) SCNNode *sphereNode4;
 
 
 /**
