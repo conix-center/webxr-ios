@@ -137,9 +137,9 @@
         float imageWidth = 1280;//worldTrackingConfiguration.videoFormat.imageResolution.width;
         float imageHeight = 720;//worldTrackingConfiguration.videoFormat.imageResolution.height;
         NSLog(@"worldTrackingConfiguration imageWidth:%f imageHeight: %f", imageWidth, imageHeight);
-        self.poseManager = [[LightAnchorPoseManager alloc] initWithImageWidth:imageWidth imageHeight:imageHeight anchorLocations:anchorLocations];
+        self.poseManager = [[LightAnchorPoseManager alloc] initWithImageWidth:imageWidth imageHeight:imageHeight];
         self.poseManager.delegate = self;
-        [self.poseManager toggleCapture];
+        [self.poseManager startCapture];
     }
     
     return self;
