@@ -14,11 +14,11 @@
 		04A8156A1F419F840082D31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041503D31F28944F00887400 /* Assets.xcassets */; };
 		04A9837A1F32291D00120CF8 /* ARKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A983651F32268900120CF8 /* ARKController.m */; };
 		04A9837C1F32292900120CF8 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 04A9836A1F3226A500120CF8 /* Shaders.metal */; };
-		5B3B936B2343F5810097323D /* LightAnchorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3B93692343F5770097323D /* LightAnchorFramework.framework */; };
-		5B3B936C2343F5810097323D /* LightAnchorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3B93692343F5770097323D /* LightAnchorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B7A6DB12305B74400EFA8C9 /* ARKController+LightAnchorPoseManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A6DB02305B74400EFA8C9 /* ARKController+LightAnchorPoseManagerDelegate.swift */; };
 		5B7A6DD4230B517800EFA8C9 /* Pods_XRViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CB6E6E1AD338266A9AB3DC /* Pods_XRViewer.framework */; };
 		5B7A6E12230C4B0500EFA8C9 /* lightanchorkernels.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7A6E11230C4B0500EFA8C9 /* lightanchorkernels.metallib */; };
+		5BB8FFA62345466D00FD392D /* LightAnchorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB8FFA42345466000FD392D /* LightAnchorFramework.framework */; };
+		5BB8FFA72345466D00FD392D /* LightAnchorFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB8FFA42345466000FD392D /* LightAnchorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6207254E206A90BF00887B1F /* RequestPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6207254C206A90BF00887B1F /* RequestPermissionsViewController.swift */; };
 		6207254F206A90BF00887B1F /* RequestPermissionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6207254D206A90BF00887B1F /* RequestPermissionsViewController.xib */; };
 		620D24A11FC48994002127FD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 620D24A01FC48994002127FD /* Settings.bundle */; };
@@ -87,7 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B3B936C2343F5810097323D /* LightAnchorFramework.framework in Embed Frameworks */,
+				5BB8FFA72345466D00FD392D /* LightAnchorFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,9 +107,9 @@
 		04A9836A1F3226A500120CF8 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		04BB9D641F39BE40004328A2 /* ARKHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARKHelper.h; sourceTree = "<group>"; };
 		23C446431F25D48210AB29A1 /* Pods-XRViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XRViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-XRViewer/Pods-XRViewer.release.xcconfig"; sourceTree = "<group>"; };
-		5B3B93692343F5770097323D /* LightAnchorFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LightAnchorFramework.framework; sourceTree = "<group>"; };
 		5B7A6DB02305B74400EFA8C9 /* ARKController+LightAnchorPoseManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARKController+LightAnchorPoseManagerDelegate.swift"; sourceTree = "<group>"; };
 		5B7A6E11230C4B0500EFA8C9 /* lightanchorkernels.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = lightanchorkernels.metallib; sourceTree = "<group>"; };
+		5BB8FFA42345466000FD392D /* LightAnchorFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LightAnchorFramework.framework; sourceTree = "<group>"; };
 		6207254C206A90BF00887B1F /* RequestPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPermissionsViewController.swift; sourceTree = "<group>"; };
 		6207254D206A90BF00887B1F /* RequestPermissionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestPermissionsViewController.xib; sourceTree = "<group>"; };
 		620D24A01FC48994002127FD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7A6DD4230B517800EFA8C9 /* Pods_XRViewer.framework in Frameworks */,
-				5B3B936B2343F5810097323D /* LightAnchorFramework.framework in Frameworks */,
+				5BB8FFA62345466D00FD392D /* LightAnchorFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +381,7 @@
 		8C9E99F056CB67F28E2A9647 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5B3B93692343F5770097323D /* LightAnchorFramework.framework */,
+				5BB8FFA42345466000FD392D /* LightAnchorFramework.framework */,
 				62CB6E6E1AD338266A9AB3DC /* Pods_XRViewer.framework */,
 			);
 			name = Frameworks;

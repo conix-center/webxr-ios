@@ -29,6 +29,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
     private var reachability: Reachability?
     private var timerSessionRunningInBackground: Timer?
     private var chooseSinglePlaneButton = UIButton()
+    private var localContentButton = UIButton()
     private var chooseSinglePlaneButtonVerticalConstraint = NSLayoutConstraint()
     private var deferredHitTest: (Int, CGFloat, CGFloat, ResultArrayBlock)? = nil
     
@@ -62,6 +63,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         setupCommonControllers()
         setupUI()
         setupSinglePlaneButton()
+        setupLocalContentButton()
 
         /// Apparently, this is called async in the main queue because we need viewDidLoad to finish
         /// its execution before doing anything on the subviews. This also could have been called from
@@ -1017,6 +1019,24 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         let heightConstraint = chooseSinglePlaneButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         view.addConstraints([horizontalConstraint, chooseSinglePlaneButtonVerticalConstraint, widthConstraint, heightConstraint])
     }
+    
+    func setupLocalContentButton() {
+        localContentButton = UIButton(type: .roundedRect)
+        view.addSubview(localContentButton)
+        localContentButton.translatesAutoresizingMaskIntoConstraints = false
+        localContentButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        localContentButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        localContentButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        localContentButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        
+        localContentButton.setTitle("Arena", for: .normal)
+        localContentButton.backgroundColor = UIColor.blue
+        localContentButton.layer.cornerRadius = 10
+        localContentButton.addTarget(self, action: #selector(localContentAction), for: .touchUpInside)
+        
+        
+        
+    }
 
     // MARK: - Cleanups
     
@@ -1285,6 +1305,34 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
                     let addedAnchorDictionary = arkController?.createDictionary(for: anchor)
                     arkController?.addedAnchorsSinceLastFrame.add(addedAnchorDictionary ?? [:])
                     arkController?.objects[anchor.identifier.uuidString] = addedAnchorDictionary
+                }
+            }
+        }
+    }
+    
+    @objc func localContentAction() {
+        if let arkController = self.arkController {
+            if let poseManager = arkController.poseManager {
+                if poseManager.beaconManager.beaconsIdDict.keys.count > 0 {
+                    let firstId = poseManager.beaconManager.beaconsIdDict.keys.first!
+                    if let webController = self.webController {
+                        if let barView = webController.barView {
+                            if let urlBarText = barView.urlField.text {
+                                if let url = URL(string: urlBarText) {
+                                    var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+                                    components.path = ""
+                                    components.query = nil
+                                    let idString = String(format: "%d", firstId)
+                                    if let newURL = components.url?.appendingPathComponent("local").appendingPathComponent(idString) {
+                                        NSLog("new url: %@", newURL.absoluteString)
+                                        barView.urlField.text = newURL.absoluteString
+                                        barView.goActionBlock?(newURL.absoluteString)
+                                    }
+                                }
+                       
+                            }
+                        }
+                    }
                 }
             }
         }
