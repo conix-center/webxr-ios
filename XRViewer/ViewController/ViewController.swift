@@ -1310,6 +1310,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, GCDWebServe
         }
     }
     
+    //light anchor lightanchor
     @objc func localContentAction() {
         if let arkController = self.arkController {
             if let poseManager = arkController.poseManager {
